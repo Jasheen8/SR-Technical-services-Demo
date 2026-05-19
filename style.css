@@ -1101,3 +1101,41 @@ img{background:linear-gradient(135deg, rgba(224,233,246,.90), rgba(161,198,234,.
   .contact-cta{display:none}
   .section{padding:74px 0}
 }
+
+@media (max-width: 768px) {
+  .glass,
+  .nav,
+  .dropdown-menu,
+  .floating-icons a,
+  .slide-copy {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .projects-track {
+    animation: none !important;
+  }
+
+  .service-card,
+  .testimonial,
+  .project-card,
+  .client-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .reveal,
+  .section-animate {
+    transition: opacity 0.45s ease, transform 0.45s ease !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+
+  .page-bg {
+    filter: none !important;
+  }
+
+  .service-detail img,
+  .service-card img {
+    height: auto;
+  }
+}
