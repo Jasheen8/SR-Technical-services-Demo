@@ -87,6 +87,16 @@ function toggleDropdown(e) {
 //   threshold: 0.12
 // });
 
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('active');
+//     }
+//   });
+// }, {
+//   threshold: 0.25
+// });
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -94,7 +104,8 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.25
+  threshold: 0.05,
+  rootMargin: '100px 0px'
 });
 
 document.querySelectorAll('.reveal, .section-animate').forEach((el) => {

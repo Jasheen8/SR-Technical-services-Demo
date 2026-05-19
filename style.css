@@ -1102,7 +1102,7 @@ img{background:linear-gradient(135deg, rgba(224,233,246,.90), rgba(161,198,234,.
   .section{padding:74px 0}
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .glass,
   .nav,
   .dropdown-menu,
@@ -1137,5 +1137,28 @@ img{background:linear-gradient(135deg, rgba(224,233,246,.90), rgba(161,198,234,.
   .service-detail img,
   .service-card img {
     height: auto;
+  }
+} */
+@media (max-width: 768px) {
+  #services,
+  #services .section-animate,
+  #services .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  #services .service-card,
+  #services .service-detail,
+  #services .service-mini {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #services img {
+    loading: auto;
   }
 }
