@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Renovation Works | SR Technical Services LLC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    :root{
+      --page-bg:#f5f8fc;
+      --surface:rgba(255,255,255,.78);
+      --surface-strong:rgba(255,255,255,.92);
+      --text:#08111f;
+      --muted:rgba(8,17,31,.68);
+      --line:rgba(78,120,181,.14);
+
+      --accent:#4e78b5;
+      --accent-2:#b8d4f3;
+      --accent-3:#d6b868;
+      --accent-4:#8a9bb6;
+
+      --nav-bg:rgba(8,14,24,.66);
+      --nav-border:rgba(255,255,255,.08);
+
+      --shadow:0 20px 50px rgba(7,17,31,.10);
+      --shadow-soft:0 10px 25px rgba(7,17,31,.08);
+      --shadow-strong:0 28px 60px rgba(7,17,31,.18);
+
+      --hero-glow:rgba(184,212,243,.42);
+      --hero-glow-2:rgba(78,120,181,.18);
+      --hero-overlay:rgba(8,14,24,.56);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:110px;
+    }
+
+    body{
+      color:var(--text);
+      background-color:var(--page-bg);
+      overflow-x:hidden;
+      transition:background-color .7s ease, color .7s ease;
+      position:relative;
+    }
+
+    body::before,
+    body::after{
+      content:'';
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      transition:opacity .7s ease, background .7s ease;
+    }
+
+    body::before{
+      background:radial-gradient(circle at top left, var(--hero-glow), transparent 28%);
+    }
+
+    body::after{
+      background:radial-gradient(circle at bottom right, var(--hero-glow-2), transparent 34%);
+    }
+
+    img, video{
+      max-width:100%;
+      display:block;
+    }
+
+    a{color:inherit}
+    button{font:inherit}
+
+    .container{
+      width:min(1240px,92%);
+      margin:0 auto;
+    }
+
+    .section{
+      padding:92px 0;
+      position:relative;
+      transition:background-color .7s ease, color .7s ease;
+      content-visibility:auto;
+      contain-intrinsic-size:1px 900px;
+    }
+
+    .section::before{
+      content:'';
+      position:absolute;
+      inset:30px 0 auto 0;
+      height:320px;
+      background:radial-gradient(circle at 20% 20%, rgba(184,212,243,.16), transparent 38%);
+      pointer-events:none;
+      z-index:-1;
+      transition:background .7s ease;
+    }
+
+    .section-title{
+      max-width:860px;
+      margin:0 auto 34px;
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(78,120,181,.10);
+      color:var(--accent);
+      font-weight:700;
+      font-size:.92rem;
+      margin-bottom:16px;
+      letter-spacing:.02em;
+      transition:background .7s ease, color .7s ease;
+    }
+
+    .pulse-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent-3);
+      box-shadow:0 0 0 0 rgba(214,184,104,.48);
+      animation:pulse 1.6s infinite;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(214,184,104,.48)}
+      70%{box-shadow:0 0 0 14px rgba(214,184,104,0)}
+      100%{box-shadow:0 0 0 0 rgba(214,184,104,0)}
+    }
+
+    .section-title h2{
+      font-size:clamp(2rem,4.4vw,3.8rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+
+    .section-title p{
+      color:var(--muted);
+      line-height:1.85;
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .glass{
+      background:var(--surface);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .shell{
+      border-radius:32px;
+      padding:28px;
+      background:linear-gradient(180deg, var(--surface-strong), rgba(255,255,255,.82));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transition:background-color .7s ease, border-color .7s ease, box-shadow .7s ease;
+    }
+
+    .nav{
+      position:fixed;
+      top:16px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(1260px,calc(100% - 24px));
+      z-index:1000;
+      border-radius:24px;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:var(--nav-bg);
+      color:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,.18);
+      border:1px solid var(--nav-border);
+      backdrop-filter:blur(20px) saturate(160%);
+      -webkit-backdrop-filter:blur(20px) saturate(160%);
+    }
+
+    .brand{
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:1.15rem;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#fff;
+    }
+
+    .brand span{
+      color:var(--accent-2);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:600;
+      font-size:.96rem;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.08);
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.16);
+    }
+
+    .nav-cta{
+      background:linear-gradient(135deg,var(--accent-3),#e7cd8f) !important;
+      color:#171717 !important;
+      font-weight:800 !important;
+      box-shadow:0 12px 26px rgba(214,184,104,.22);
+    }
+
+    .menu-btn{
+      display:none;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:14px;
+      color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 10px 22px rgba(78,120,181,.22);
+      cursor:pointer;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      top:90px;
+      left:-330px;
+      width:300px;
+      z-index:1200;
+      padding:22px;
+      border-radius:0 24px 24px 0;
+      background:rgba(8,14,24,.94);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 20px 40px rgba(0,0,0,.24);
+      backdrop-filter:blur(16px);
+      transition:.32s ease;
+    }
+
+    .mobile-menu.active{left:0}
+    .mobile-menu a{
+      display:block;
+      text-decoration:none;
+      color:#f4f7fb;
+      padding:12px 14px;
+      border-radius:14px;
+      margin-bottom:8px;
+      background:rgba(255,255,255,.05);
+    }
+
+    .social-floating{
+      position:fixed;
+      right:16px;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:1100;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .social-floating a{
+      width:54px;
+      height:54px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:#fff;
+      background:rgba(8,14,24,.92);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 20px rgba(0,0,0,.16);
+      text-decoration:none;
+      transition:.25s ease;
+    }
+
+    .social-floating a:hover{
+      transform:translateX(-5px) scale(1.04);
+      background:linear-gradient(135deg,var(--accent),var(--accent-3));
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:120px 0 44px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(8,14,24,.20), var(--hero-overlay)),
+        radial-gradient(circle at 20% 20%, rgba(184,212,243,.20), transparent 26%),
+        radial-gradient(circle at 80% 30%, rgba(214,184,104,.12), transparent 25%);
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      overflow:hidden;
+    }
+
+    .hero-media video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.02);
+      filter:saturate(1.02) contrast(1.02);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+      color:#fff;
+    }
+
+    .hero-copy h1{
+      font-size:clamp(2.8rem,6vw,5.6rem);
+      line-height:.98;
+      letter-spacing:-.04em;
+      margin:14px 0 18px;
+      max-width:11ch;
+    }
+
+    .hero-copy h1 span{
+      color:var(--accent-2);
+      text-shadow:0 8px 24px rgba(184,212,243,.14);
+    }
+
+    .hero-copy p{
+      max-width:620px;
+      color:rgba(255,255,255,.82);
+      line-height:1.9;
+      font-size:1.03rem;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      transition:.25s ease;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:hover{transform:translateY(-4px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),#6688be);
+      color:#fff;
+      box-shadow:0 16px 28px rgba(78,120,181,.22);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:26px;
+      max-width:660px;
+    }
+
+    .hero-stat{
+      padding:16px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .hero-stat strong{
+      display:block;
+      font-size:1.2rem;
+      color:#fff;
+      margin-bottom:5px;
+    }
+
+    .hero-stat span{
+      color:rgba(255,255,255,.72);
+      font-size:.9rem;
+    }
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .intro-image{
+      min-height:520px;
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:var(--shadow-strong);
+      position:relative;
+    }
+
+    .intro-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .intro-image::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent, rgba(8,14,24,.22));
+      pointer-events:none;
+    }
+
+    .intro-copy h2{
+      font-size:clamp(2rem,4.2vw,3.4rem);
+      line-height:1.05;
+      margin-bottom:14px;
+      letter-spacing:-.03em;
+    }
+
+    .intro-copy p{
+      color:var(--muted);
+      line-height:1.9;
+      margin-bottom:16px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .stat{
+      padding:18px;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.96));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.65rem;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .service-detail{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .service-detail.reverse{
+      grid-template-columns:1.05fr .95fr;
+    }
+
+    .service-detail img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .service-panel{
+      padding:24px;
+      border-radius:28px;
+      background:var(--surface-strong);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .service-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(78,120,181,.10);
+      color:var(--accent);
+      font-weight:800;
+      font-size:.84rem;
+      margin-bottom:12px;
+    }
+
+    .service-panel h3{
+      font-size:1.9rem;
+      line-height:1.08;
+      margin-bottom:10px;
+    }
+
+    .service-panel p{
+      color:var(--muted);
+      line-height:1.85;
+    }
+
+    .showcase-scene{
+      position:relative;
+      width:100%;
+      min-height:clamp(520px, 78vh, 820px);
+      border-radius:0;
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      overflow:visible;
+      perspective:1800px;
+      transform:translateZ(0);
+    }
+
+    .scene-card{
+      position:absolute;
+      left:50%;
+      top:0;
+      width:min(740px,86vw);
+      height:clamp(390px, 66vh, 640px);
+      margin-left:clamp(-370px, -43vw, -370px);
+      border-radius:30px;
+      overflow:hidden;
+      background:#101722;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 26px 60px rgba(7,17,31,.20);
+      opacity:0;
+      transform:translateX(-125%) scale(.84) rotate(-8deg);
+      transition:
+        transform .18s cubic-bezier(.22,.61,.36,1),
+        opacity .18s ease,
+        filter .18s ease,
+        box-shadow .18s ease;
+      will-change:transform, opacity;
+      pointer-events:none;
+      backface-visibility:hidden;
+      transform-style:preserve-3d;
+    }
+
+    .scene-card::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(8,14,24,.02), rgba(8,14,24,.68));
+      z-index:1;
+    }
+
+    .scene-card .bg{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.03);
+      transition:transform 1s ease;
+    }
+
+    .scene-card .card-copy{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      z-index:2;
+      padding:18px 18px 20px;
+      border-radius:22px;
+      color:#fff;
+      background:rgba(8,14,24,.42);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .scene-card .card-copy .num{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      margin-bottom:10px;
+      font-size:.78rem;
+      font-weight:700;
+    }
+
+    .scene-card .card-copy h3{
+      font-size:1.7rem;
+      line-height:1.05;
+      margin-bottom:8px;
+    }
+
+    .scene-card .card-copy p{
+      color:rgba(255,255,255,.84);
+      line-height:1.7;
+      font-size:.94rem;
+    }
+
+    .scene-card.is-active{
+      opacity:1;
+      transform:translateX(0) scale(1) rotate(0deg);
+      z-index:5;
+      pointer-events:auto;
+    }
+
+    .scene-card.is-next-1{
+      opacity:.95;
+      transform:translateX(34%) scale(.94) rotate(5deg);
+      z-index:4;
+      filter:saturate(.98);
+    }
+
+    .scene-card.is-next-2{
+      opacity:.75;
+      transform:translateX(56%) scale(.88) rotate(8deg);
+      z-index:3;
+      filter:saturate(.92);
+    }
+
+    .scene-card.is-next-3{
+      opacity:.45;
+      transform:translateX(78%) scale(.82) rotate(12deg);
+      z-index:2;
+      filter:saturate(.86);
+    }
+
+    .scene-card.is-prev-1{
+      opacity:.18;
+      transform:translateX(-28%) scale(.88) rotate(-5deg);
+      z-index:1;
+      filter:saturate(.82);
+    }
+
+    .scene-card.is-prev-2{
+      opacity:0;
+      transform:translateX(-70%) scale(.78) rotate(-10deg);
+      z-index:0;
+      filter:blur(.2px);
+    }
+
+    .mosaic-grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:16px;
+      margin-top:20px;
+    }
+
+    .mosaic-card{
+      position:relative;
+      min-height:230px;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      background:#fff;
+      isolation:isolate;
+    }
+
+    .mosaic-card::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, transparent, rgba(8,14,24,.22));
+      z-index:1;
+    }
+
+    .mosaic-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.02);
+      transition:transform 1s ease;
+    }
+
+    .mosaic-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .mosaic-card .caption{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:2;
+      padding:12px 14px;
+      color:#fff;
+      border-radius:18px;
+      background:rgba(8,14,24,.40);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .mosaic-card.big{grid-column:span 7; min-height:390px;}
+    .mosaic-card.small{grid-column:span 5; min-height:390px;}
+    .mosaic-card.tall{grid-column:span 4; min-height:310px;}
+    .mosaic-card.wide{grid-column:span 8; min-height:310px;}
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:20px;
+    }
+
+    .step{
+      padding:24px;
+      border-radius:26px;
+      background:rgba(255,255,255,.90);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step .num{
+      width:52px;
+      height:52px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--accent),#6b8ec2);
+      color:#000;
+      font-weight:800;
+      margin-bottom:16px;
+      box-shadow:0 12px 20px rgba(78,120,181,.18);
+    }
+
+    .step h3{
+      margin-bottom:10px;
+      font-size:1.15rem;
+    }
+
+    .step p{
+      color:var(--muted);
+      line-height:1.78;
+    }
+
+    .cta{
+      padding:0 0 96px;
+    }
+
+    .cta-box{
+      border-radius:36px;
+      padding:58px 42px;
+      background:
+        linear-gradient(135deg, rgba(8,14,24,.96), rgba(20,27,40,.96)),
+        radial-gradient(circle at top right, rgba(214,184,104,.14), transparent 30%);
+      color:#fff;
+      box-shadow:var(--shadow-strong);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-box::before{
+      content:'';
+      position:absolute;
+      inset:-120px -60px auto auto;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:rgba(184,212,243,.08);
+      pointer-events:none;
+    }
+
+    .cta-inner{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .cta-inner h2{
+      font-size:clamp(2rem,4.5vw,4rem);
+      line-height:1.02;
+      margin-bottom:12px;
+    }
+
+    .cta-inner p{
+      color:rgba(255,255,255,.78);
+      line-height:1.9;
+      max-width:700px;
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .footer{
+      padding:32px 0 28px;
+      color:var(--muted);
+    }
+
+    .footer-inner{
+      border-radius:28px;
+      padding:26px;
+      background:rgba(8,14,24,.94);
+      color:#f4f7fb;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 18px 40px rgba(0,0,0,.20);
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr;
+      gap:22px;
+    }
+
+    .footer h3{
+      color:#fff;
+      margin-bottom:10px;
+      font-size:1.08rem;
+    }
+
+    .footer p{
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+    }
+
+    .footer-links a{
+      text-decoration:none;
+      color:#f4f7fb;
+      padding:10px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.05);
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{
+      background:rgba(78,120,181,.25);
+    }
+
+    .footer-bottom{
+      text-align:center;
+      padding-top:10px;
+      color:rgba(8,17,31,.62);
+      font-size:.95rem;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(34px);
+      transition:opacity .9s ease, transform .9s cubic-bezier(.17,.84,.44,1), filter .9s ease;
+      will-change:transform, opacity;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:none;
+      filter:none;
+    }
+
+    @media (max-width: 1100px){
+      .intro-grid,
+      .service-detail,
+      .cta-inner,
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-bottom:28px;
+      }
+
+      .stats,
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .mosaic-grid{
+        grid-template-columns:repeat(6,1fr);
+      }
+
+      .mosaic-card.big,
+      .mosaic-card.small,
+      .mosaic-card.tall,
+      .mosaic-card.wide{
+        grid-column:span 6;
+      }
+
+      .showcase-scene{
+        min-height:620px;
+      }
+
+      .scene-card{
+        width:min(680px,88vw);
+        height:540px;
+        margin-left:calc(-1 * min(340px, 44vw));
+      }
+    }
+
+    @media (max-width: 900px){
+      .nav-links{display:none}
+      .menu-btn{display:grid;place-items:center}
+      .social-floating{right:10px}
+      .hero{
+        padding-top:108px;
+      }
+
+      .hero-content{
+        max-width:100%;
+      }
+
+      .hero-copy h1{
+        max-width:12ch;
+      }
+
+      .section{
+        padding:78px 0;
+      }
+
+      .mosaic-grid{
+        grid-template-columns:1fr;
+      }
+
+      .mosaic-card.big,
+      .mosaic-card.small,
+      .mosaic-card.tall,
+      .mosaic-card.wide{
+        grid-column:span 1;
+        min-height:280px;
+      }
+
+      .mosaic-card.big{min-height:360px;}
+
+      .showcase-scene{
+        min-height:560px;
+      }
+
+      .scene-card{
+        width:min(590px,92vw);
+        height:500px;
+        margin-left:calc(-1 * min(295px, 46vw));
+      }
+    }
+
+    @media (max-width: 720px){
+      .hero{
+        padding-top:98px;
+      }
+
+      .hero-copy h1{
+        font-size:2.55rem;
+      }
+
+      .hero-copy p{
+        font-size:.98rem;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions,
+      .cta-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn{
+        flex:1 1 100%;
+      }
+
+      .intro-image{
+        min-height:360px;
+      }
+
+      .service-detail img{
+        height:240px;
+      }
+
+      .service-panel{
+        padding:20px;
+      }
+
+      .cta-box{
+        padding:34px 20px;
+        border-radius:28px;
+      }
+
+      .showcase-scene{
+        min-height:490px;
+      }
+
+      .scene-card{
+        width:92vw;
+        height:420px;
+        margin-left:-46vw;
+        border-radius:24px;
+      }
+
+      .scene-card .card-copy h3{
+        font-size:1.38rem;
+      }
+
+      .scene-card.is-next-1{
+        transform:translateX(18%) scale(.95) rotate(3deg);
+      }
+
+      .scene-card.is-next-2{
+        transform:translateX(34%) scale(.90) rotate(6deg);
+      }
+
+      .scene-card.is-next-3{
+        transform:translateX(50%) scale(.85) rotate(9deg);
+      }
+
+      .scene-card.is-prev-1{
+        transform:translateX(-20%) scale(.90) rotate(-4deg);
+      }
+
+      .scene-card.is-prev-2{
+        transform:translateX(-44%) scale(.82) rotate(-7deg);
+      }
+
+      .social-floating a{
+        width:48px;
+        height:48px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .brand{
+        font-size:.98rem;
+        letter-spacing:.06em;
+      }
+
+      .hero-copy h1{
+        font-size:2.25rem;
+      }
+
+      .section-title h2{
+        font-size:2rem;
+      }
+
+      .showcase-scene{
+        min-height:430px;
+      }
+
+      .scene-card{
+        width:92vw;
+        height:390px;
+        margin-left:-46vw;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *,
+      *::before,
+      *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="brand">SR <span>RENOVATION</span></a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#showcase">Showcase</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+
+  <aside class="mobile-menu glass" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <div class="social-floating">
+    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:+971521483314" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+  </div>
+
+  <main id="home" class="hero" data-theme="dark">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1800&auto=format&fit=crop">
+        <source src="https://videos.pexels.com/video-files/6473955/6473955-uhd_3840_2160_25fps.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Luxury Renovation & Interior Transformation</div>
+        <h1>Renovation Spaces That Feel <span>Refined</span></h1>
+        <p>
+          A premium renovation page with cinematic motion, elegant project storytelling, and smooth performance on mobile and desktop.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-circle-check"></i> Get Free Quote</a>
+          <a class="btn btn-secondary" href="#showcase"><i class="fa-solid fa-image"></i> View Highlights</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>16+ Years</strong>
+            <span>Experience</span>
+          </div>
+          <div class="hero-stat">
+            <strong>100+</strong>
+            <span>Projects</span>
+          </div>
+          <div class="hero-stat">
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="section" id="about" data-theme="light">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> About Renovation</div>
+        <h2>Spaces Reworked With Balance</h2>
+        <p>Warm material palettes, subtle contrast, and polished finishing create a premium renovation feel that stays smooth on every device.</p>
+      </div>
+
+      <div class="intro-grid shell reveal">
+        <div class="intro-image">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop" alt="Renovated modern living space">
+        </div>
+        <div class="intro-copy">
+          <h2>Renovation With A Modern Editorial Mood</h2>
+          <p>
+            This page keeps the motion clean and the layout cinematic: strong imagery, calm typography, gentle scroll transitions, and themes that change as each section comes into view.
+          </p>
+          <p>
+            The color palette follows your home page family, but with softer renovation shades so the page feels related, not repeated.
+          </p>
+          <div class="stats">
+            <div class="stat"><strong>Design</strong><span>Clear and premium</span></div>
+            <div class="stat"><strong>Build</strong><span>Structured and neat</span></div>
+            <div class="stat"><strong>Finish</strong><span>Luxury detailing</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services" data-theme="dark">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Renovation Services</div>
+        <h2>Focused Service Presentation</h2>
+        <p>Clean imagery, polished spacing, and a softer structure keep the page elegant and fast.</p>
+      </div>
+
+      <div class="service-detail reveal" id="renovation">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop" alt="Renovation detail">
+        <div class="service-panel shell">
+          <div class="service-badge"><i class="fa-solid fa-sparkles"></i> Signature Renovation</div>
+          <h3>Spaces Reworked With Balance</h3>
+          <p>
+            Renovation is handled as a sequence of visual and technical decisions: structure, color, lighting, proportion, and the final touch that makes the space feel complete.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-detail reverse reveal" id="painting">
+        <div class="service-panel shell">
+          <div class="service-badge"><i class="fa-solid fa-paint-roller"></i> Painting</div>
+          <h3>Soft Tones, Clean Lines</h3>
+          <p>
+            The painting presentation uses warm contrast and subtle motion so the page feels luxurious without becoming heavy on phones.
+          </p>
+        </div>
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop" alt="Painting finish">
+      </div>
+
+      <div class="service-detail reveal" id="carpentry">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=1400&auto=format&fit=crop" alt="Carpentry detail">
+        <div class="service-panel shell">
+          <div class="service-badge"><i class="fa-solid fa-hammer"></i> Carpentry</div>
+          <h3>Built-Ins And Custom Detailing</h3>
+          <p>
+            Joinery and carpentry are framed with the same editorial treatment, but with a slightly different accent tone so each section feels distinct.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-detail reverse reveal" id="tiles">
+        <div class="service-panel shell">
+          <div class="service-badge"><i class="fa-solid fa-border-all"></i> Tiles</div>
+          <h3>Sharp Surfaces And Clean Lines</h3>
+          <p>
+            Tile installation is shown with larger framing and calmer spacing so the section reads like a premium design magazine spread.
+          </p>
+        </div>
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1400&auto=format&fit=crop" alt="Tiles installation">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="showcase" data-theme="light">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Project Highlights & Mosaic</div>
+        <h2>Automatic Left-To-Right Card Motion</h2>
+        <p>The cards move automatically without arrows, sliding across the screen in a smooth left-to-right cinematic flow.</p>
+      </div>
+
+      <div class="showcase-scene" id="showcaseScene" aria-label="Animated showcase cards">
+        <article class="scene-card is-active" data-title="Living Area Renewal">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop')"></div>
+          <div class="card-copy">
+            <div class="num">01 / 05</div>
+            <h3>Living Area Renewal</h3>
+            <p>Soft textures, natural light, and a premium modern mood.</p>
+          </div>
+        </article>
+
+        <article class="scene-card" data-title="Kitchen Upgrade">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop')"></div>
+          <div class="card-copy">
+            <div class="num">02 / 05</div>
+            <h3>Kitchen Upgrade</h3>
+            <p>Balanced layout with refined surfaces and practical luxury.</p>
+          </div>
+        </article>
+
+        <article class="scene-card" data-title="Bedroom Mood">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1400&auto=format&fit=crop')"></div>
+          <div class="card-copy">
+            <div class="num">03 / 05</div>
+            <h3>Bedroom Mood</h3>
+            <p>Quiet palette, smooth finish, and a relaxed high-end feel.</p>
+          </div>
+        </article>
+
+        <article class="scene-card" data-title="Wall Detail">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1400&auto=format&fit=crop')"></div>
+          <div class="card-copy">
+            <div class="num">04 / 05</div>
+            <h3>Wall Detail</h3>
+            <p>Paint and texture finishing with careful visual alignment.</p>
+          </div>
+        </article>
+
+        <article class="scene-card" data-title="Full Renovation">
+          <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1400&auto=format&fit=crop')"></div>
+          <div class="card-copy">
+            <div class="num">05 / 05</div>
+            <h3>Full Renovation</h3>
+            <p>Complete transformation with structure, detail, and polish.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="mosaic-grid">
+        <article class="mosaic-card big reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1400&auto=format&fit=crop" alt="Material texture">
+          <div class="caption"><strong>Material Texture</strong></div>
+        </article>
+
+        <article class="mosaic-card small reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1400&auto=format&fit=crop" alt="Kitchen detail">
+          <div class="caption"><strong>Kitchen Detail</strong></div>
+        </article>
+
+        <article class="mosaic-card tall reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1400&auto=format&fit=crop" alt="Paint finish">
+          <div class="caption"><strong>Paint Finish</strong></div>
+        </article>
+
+        <article class="mosaic-card wide reveal">
+          <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1400&auto=format&fit=crop" alt="Bedroom mood">
+          <div class="caption"><strong>Bedroom Mood</strong></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" data-theme="dark">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="eyebrow"><span class="pulse-dot"></span> Workflow</div>
+        <h2>Simple And Clear Renovation Process</h2>
+        <p>Like a premium design studio, the process is calm, structured, and easy to scan.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">01</div>
+          <h3>Discovery</h3>
+          <p>Understand the space, the mood, and the desired transformation direction.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">02</div>
+          <h3>Design</h3>
+          <p>Build a visual plan with materials, lighting, and layout priorities.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">03</div>
+          <h3>Execution</h3>
+          <p>Deliver construction, finishing, and detailing with control and consistency.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">04</div>
+          <h3>Handover</h3>
+          <p>Final polish, cleaning, and a ready-to-use refined interior.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="contact" data-theme="light">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="cta-inner">
+          <div>
+            <div class="eyebrow" style="background:rgba(255,255,255,.10); color:#fff;">
+              <span class="pulse-dot"></span> Contact SR Technical Services LLC
+            </div>
+            <h2>Ready To Renovate Your Space?</h2>
+            <p>
+              Bring a luxury editorial style to your renovation page while keeping it fast, mobile-friendly, and easy to connect with the main website.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="tel:+971521483314" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Now</a>
+            <a href="mailto:info@srtechnicals.com" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" data-theme="dark">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <h3>SR Technical Services LLC</h3>
+          <p>Renovation, maintenance, fit-out, painting, carpentry, plumbing, electrical and tiles installation.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#showcase">Showcase</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p style="margin-bottom:8px;"><i class="fa-solid fa-phone"></i> +971 521483314</p>
+          <p style="margin-bottom:8px;"><i class="fa-solid fa-envelope"></i> info@srtechnicals.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Dubai, UAE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Syed Rizvi Technical Services LLC</div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBtn = document.getElementById('menuBtn');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    const themeMap = {
+      light: {
+        pageBg: '#f5f8fc',
+        surface: 'rgba(255,255,255,.78)',
+        surfaceStrong: 'rgba(255,255,255,.92)',
+        accent: '#4e78b5',
+        accent2: '#b8d4f3',
+        accent3: '#d6b868',
+        accent4: '#8a9bb6',
+        heroGlow: 'rgba(184,212,243,.42)',
+        heroGlow2: 'rgba(78,120,181,.18)',
+        heroOverlay: 'rgba(8,14,24,.56)',
+        line: 'rgba(78,120,181,.14)',
+        text: '#08111f',
+        muted: 'rgba(8,17,31,.68)',
+        navBg: 'rgba(8,14,24,.66)',
+        navBorder: 'rgba(255,255,255,.08)'
+      },
+      dark: {
+        pageBg: '#0b1220',
+        surface: 'rgba(16,24,38,.72)',
+        surfaceStrong: 'rgba(20,30,46,.92)',
+        accent: '#7ca8e8',
+        accent2: '#d0e2ff',
+        accent3: '#d7b96c',
+        accent4: '#95a8c5',
+        heroGlow: 'rgba(124,168,232,.20)',
+        heroGlow2: 'rgba(215,185,108,.12)',
+        heroOverlay: 'rgba(5,10,18,.62)',
+        line: 'rgba(255,255,255,.10)',
+        text: '#f6f8fc',
+        muted: 'rgba(246,248,252,.72)',
+        navBg: 'rgba(5,10,18,.74)',
+        navBorder: 'rgba(255,255,255,.08)'
+      }
+    };
+
+    function applyTheme(name){
+      const t = themeMap[name] || themeMap.light;
+      const root = document.documentElement.style;
+      root.setProperty('--page-bg', t.pageBg);
+      root.setProperty('--surface', t.surface);
+      root.setProperty('--surface-strong', t.surfaceStrong);
+      root.setProperty('--accent', t.accent);
+      root.setProperty('--accent-2', t.accent2);
+      root.setProperty('--accent-3', t.accent3);
+      root.setProperty('--accent-4', t.accent4);
+      root.setProperty('--hero-glow', t.heroGlow);
+      root.setProperty('--hero-glow-2', t.heroGlow2);
+      root.setProperty('--hero-overlay', t.heroOverlay);
+      root.setProperty('--line', t.line);
+      root.setProperty('--text', t.text);
+      root.setProperty('--muted', t.muted);
+      root.setProperty('--nav-bg', t.navBg);
+      root.setProperty('--nav-border', t.navBorder);
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -80px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    const themeSections = document.querySelectorAll('[data-theme]');
+    const themeObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if(visible){
+        applyTheme(visible.target.dataset.theme);
+      }
+    }, {
+      threshold: [0.25, 0.45, 0.65],
+      rootMargin: '-10% 0px -35% 0px'
+    });
+
+    themeSections.forEach((section) => themeObserver.observe(section));
+    applyTheme(document.querySelector('[data-theme]')?.dataset.theme || 'light');
+
+    const sceneCards = Array.from(document.querySelectorAll('.scene-card'));
+    const showcaseScene = document.getElementById('showcaseScene');
+
+    let activeIndex = 0;
+    let stackTimer = null;
+
+    function renderStack(){
+      const count = sceneCards.length;
+
+      sceneCards.forEach((card, idx) => {
+        card.className = 'scene-card';
+        const diff = (idx - activeIndex + count) % count;
+
+        if (diff === 0){
+          card.classList.add('is-active');
+        } else if (diff === 1){
+          card.classList.add('is-next-1');
+        } else if (diff === 2){
+          card.classList.add('is-next-2');
+        } else if (diff === 3){
+          card.classList.add('is-next-3');
+        } else if (diff === count - 1){
+          card.classList.add('is-prev-1');
+        } else {
+          card.classList.add('is-prev-2');
+        }
+      });
+    }
+
+    function nextStack(){
+      activeIndex++;
+      if(activeIndex >= sceneCards.length){
+        activeIndex = 0;
+      }
+      renderStack();
+    }
+
+    function startStack(){
+      stopStack();
+      stackTimer = setInterval(() => {
+        nextStack();
+      }, 1400);
+    }
+
+    function stopStack(){
+      clearInterval(stackTimer);
+    }
+
+    if(sceneCards.length){
+      renderStack();
+      startStack();
+    }
+
+    showcaseScene.addEventListener('mouseenter', stopStack);
+    showcaseScene.addEventListener('mouseleave', startStack);
+
+    document.addEventListener('click', (e) => {
+      if(
+        !mobileMenu.contains(e.target) &&
+        !menuBtn.contains(e.target)
+      ){
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    const heroVideo = document.querySelector('.hero-media video');
+    if(heroVideo){
+      heroVideo.play().catch(() => {});
+    }
+
+    window.addEventListener('blur', stopStack);
+    window.addEventListener('focus', startStack);
+  </script>
+</body>
+</html>
