@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -379,10 +379,13 @@
       <div>
         <h3>Services</h3>
         <div class="footer-links">
-          <a href="#service-renovation">Renovation</a>
-          <a href="#service-electrical">Electrical</a>
-          <a href="#service-plumbing">Plumbing</a>
-          <a href="#service-fitout">Fit-Out</a>
+          <a href="renovationWork.html">Renovation</a>
+          <a href="electricalWork.html">Electrical</a>
+          <a href="paintWork.html">Painting</a>
+          <a href="plumbingWork.html">Plumbing</a>
+          <a href="fitoutJoineryWork.html">Fit-Out</a>
+          <a href="buildingMaintenanceWork.html">Building Maintenance</a>
+          
         </div>
       </div>
       <div>
@@ -399,4 +402,884 @@
 
   <script src="script.js"></script>
 </body>
+</html> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SR Technical Services LLC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page-bg"></div>
+    <div class="page-overlay"></div>
+    <div class="noise"></div>
+
+    <nav class="nav">
+      <a href="index.html" class="brand">SR <span>TECHNICALS</span></a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li class="dropdown" id="serviceDropdown">
+          <a
+            class="dropdown-toggle"
+            href="#services"
+            onclick="toggleDropdown(event)"
+            >Services ▾</a
+          >
+          <div class="dropdown-menu">
+            <a href="renovationWork.html">Renovation Works</a>
+            <a href="electricalWork.html">Electrical Works</a>
+            <a href="plumbingWork.html">Plumbing Services</a>
+            <a href="paintWork.html">Painting Works</a>
+            <a href="fitoutJoineryWork.html">Fit-Out & Joinery Works</a>
+            <a href="buildingMaintenanceWork.html">Building Maintenance</a>
+            <a href="#service-tiling">Tiles Installation</a>
+            <a href="#service-carpentry">Carpentry</a>
+          </div>
+        </li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#clients">Our Clients</a></li>
+        <li><a href="#contact" class="contact-cta">Contact Us</a></li>
+      </ul>
+
+      <button class="menu-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <aside class="sidebar glass" id="sidebar">
+      <h3>Quick Menu</h3>
+      <a href="index.html">Home</a>
+      <a href="aboutUs.html">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#clients">Clients</a>
+      <a href="#book">Book Online</a>
+      <a href="#contact">Contact</a>
+    </aside>
+
+    <div class="floating-icons">
+      <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="tel:+971521483314" title="Call"
+        ><i class="fa-solid fa-phone"></i
+      ></a>
+      <a href="mailto:info@srtechnicals.com" title="Email"
+        ><i class="fa-solid fa-envelope"></i
+      ></a>
+      <a href="#book" title="Book"
+        ><i class="fa-solid fa-calendar-check"></i
+      ></a>
+    </div>
+
+    <main id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="reveal from-left">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span> Premium UAE Technical & Maintenance
+            Experts
+          </div>
+          <h1>
+            Trusted <span>Luxury Technical Services</span> for Dubai & UAE
+          </h1>
+          <p>
+            Syed Rizvi Technical Services LLC delivers renovation, MEP, fit-out,
+            maintenance, carpentry, plumbing, electrical and interior solutions
+            with reliable quality, modern execution and a polished finish.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact"
+              ><i class="fa-solid fa-circle-check"></i> Get Free Quote</a
+            >
+            <a class="btn btn-secondary" href="#book"
+              ><i class="fa-solid fa-calendar-days"></i> Book Online</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-panel reveal from-right">
+          <div class="scroll-indicator">
+            <i class="fa-solid fa-cube"></i> Motion UI Inspired
+          </div>
+          <div class="mock-browser glass">
+            <div class="browser-top">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <div>SR Technical Services</div>
+              <div><i class="fa-solid fa-shield-halved"></i> Premium</div>
+            </div>
+
+            <div class="browser-content">
+              <div class="main-card">
+                <div
+                  class="main-slide active"
+                  style="
+                    background-image: url(&quot;https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop&quot;);
+                  "
+                >
+                  <div class="slide-copy">
+                    <h3>Premium Motion Design</h3>
+                    <p>
+                      Layered cards, premium contrast and smooth motion inspired
+                      by your reference UI.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="main-slide"
+                  style="
+                    background-image: url(&quot;https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&quot;);
+                  "
+                >
+                  <div class="slide-copy">
+                    <h3>Elegant Office Transformation</h3>
+                    <p>
+                      Dark featured panel with a centered visual focus and
+                      confident brand identity.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="main-slide"
+                  style="
+                    background-image: url(&quot;https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2070&auto=format&fit=crop&quot;);
+                  "
+                >
+                  <div class="slide-copy">
+                    <h3>Residential Renovation Excellence</h3>
+                    <p>
+                      Premium client-facing presentation with a cinematic,
+                      trust-building feel.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="slider-controls">
+                  <button onclick="prevSlide()">
+                    <i class="fa-solid fa-angle-left"></i>
+                  </button>
+                  <button onclick="toggleSlide()" id="pauseBtn">Pause</button>
+                  <button onclick="nextSlide()">
+                    <i class="fa-solid fa-angle-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="thumb-grid">
+                <div class="thumb">
+                  <img
+                    src="images\sr1.jpg"
+                    alt="Project preview"
+                  />
+                  <div class="thumb-label">Interior Planning</div>
+                </div>
+                <div class="thumb">
+                  <img
+                    src="images\sr3.jpg"
+                    alt="Project preview"
+                  />
+                  <div class="thumb-label">Painting & Finishing</div>
+                </div>
+                <div class="thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070&auto=format&fit=crop"
+                    alt="Project preview"
+                  />
+                  <div class="thumb-label">MEP Services</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section id="about" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-bottom">
+        <div class="section-title">
+          <div class="eyebrow"><span class="pulse-dot"></span> About Us</div>
+          <h2>Premium Maintenance Company Built on Trust</h2>
+          <p>
+            Delivering quality, on-time execution and professional craftsmanship
+            across UAE projects.
+          </p>
+        </div>
+
+        <div class="about-grid section-card">
+          <div class="about-img">
+            <img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop"
+              alt="About SR Technical Services"
+            />
+          </div>
+          <div class="about-text">
+            <h3>16+ Years Of Experience, Quality and In-Budget Work</h3>
+            <p>
+              We focus on planning, execution, quality and dependable delivery
+              for civil maintenance, renovation, joinery, electrical, plumbing,
+              painting and fit-out works.
+            </p>
+            <p>
+              Our vision is to provide world-class maintenance service with
+              customer satisfaction, innovative design and superior workmanship
+              standards.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <strong class="count" data-count="16" data-plus="true">0</strong
+                ><span>Years Experience</span>
+              </div>
+              <div class="stat">
+                <strong class="count" data-count="100" data-plus="true"
+                  >0</strong
+                ><span>Projects</span>
+              </div>
+              <div class="stat"><strong>24/7</strong><span>Support</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-right">
+        <div class="section-title">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span> Our Services
+          </div>
+          <h2>Services</h2>
+          <p>
+            The dropdown jumps to each service section. The service area below
+            is fully visible and styled.
+          </p>
+        </div>
+
+        <div class="services-banner">
+          <div class="service-mini">
+            <i class="fa-solid fa-hammer"></i>
+            <div>
+              <strong><a href="renovationWork.html">Renovation</a></strong
+              ><span>Luxury refurbishment</span>
+            </div>
+          </div>
+          <div class="service-mini">
+            <i class="fa-solid fa-bolt"></i>
+            <div>
+              <strong><a href="electricalWork.html">Electrical</a></strong
+              ><span>Safe and reliable</span>
+            </div>
+          </div>
+          <div class="service-mini">
+            <i class="fa-solid fa-faucet-drip"></i>
+            <div>
+              <strong><a href="plumbingWork.html">Plumbing</a></strong
+              ><span>Quick maintenance</span>
+            </div>
+          </div>
+          <div class="service-mini">
+            <i class="fa-solid fa-paint-roller"></i>
+            <div>
+              <strong><a href="paintWork.html">Painting</a></strong
+              ><span>Premium finishing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-grid" style="margin-top: 20px">
+          <a href="renovationWork.html" class="service-card glass">
+            <img
+              src="images/image1.png"
+              alt="Renovation Works"
+            />
+            <h3>Renovation Works</h3>
+            <p>
+              Modern residential and commercial renovation with premium
+              finishing and organized delivery.
+            </p>
+          </a>
+          <a href="electricalWork.html" class="service-card glass">
+            <img
+              src="images/eImage14.jpeg"
+              alt="Electrical Works"
+            />
+            <h3>Electrical Works</h3>
+            <p>
+              Safe wiring, installation and maintenance delivered by experienced
+              technical professionals.
+            </p>
+          </a>
+          <a href="plumbingWork.html" class="service-card glass">
+            <img
+              src="images/rImage4.jpeg"
+              alt="Plumbing Services"
+            />
+            <h3>Plumbing Services</h3>
+            <p>
+              Reliable plumbing installation, repair and maintenance for homes,
+              offices and commercial spaces.
+            </p>
+          </a>
+          <a href="paintWork.html" class="service-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2070&auto=format&fit=crop"
+              alt="Painting Works"
+            />
+            <h3>Painting Works</h3>
+            <p>
+              Beautiful interior and exterior painting to enhance the appearance
+              of living and workspaces.
+            </p>
+          </a>
+          <a href="fitoutJoineryWork.html" class="service-card glass">
+            <img
+              src="images/fImage4.jpeg"
+              alt="Joinery and Carpentry"
+            />
+            <h3>FitOut & Joinery</h3>
+            <p>
+              Custom cupboards, cabinets and woodwork with clean detailing and
+              practical luxury design.
+            </p>
+          </a>
+          <a href="buildingMaintenanceWork.html" class="service-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop"
+              alt="Fit-Out Works"
+            />
+            <h3>Building Maintenance</h3>
+            <p>
+              Premium fit-out solutions for offices and commercial spaces with
+              elegant modern layouts.
+            </p>
+          </a>
+        </div>
+
+        <div
+          class="section-card"
+          style="margin-top: 22px; background: rgba(255, 255, 255, 0.94)"
+        >
+          <div class="service-detail" id="service-renovation">
+            <img
+              src="images/image2.png"
+              alt="Renovation detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="renovationWork.html">Renovation Works</a>
+              </div>
+              <h3>Design, Build, Finish</h3>
+              <p>
+                We handle renovation projects with a practical and stylish
+                approach, ensuring quality, smooth delivery and premium
+                finishing.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-electrical">
+            <img
+              src="images/eImage13.jpeg"
+              alt="Electrical detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="electricalWork.html">Electrical Works</a>
+              </div>
+              <h3>Reliable Power & Safety</h3>
+              <p>
+                Electrical services include installation, maintenance and
+                troubleshooting with a careful standard focused on safety and
+                performance.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-plumbing">
+            <img
+              src="images/rImage4.jpeg"
+              alt="Plumbing detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="plumbingWork.html">Plumbing Service</a>
+              </div>
+              <h3>Leak-Free Comfort</h3>
+              <p>
+                Dependable installations, repairs and maintenance for kitchens,
+                bathrooms and full property systems.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-painting">
+            <img
+              src="images/image5.jpeg"
+              alt="Painting detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="paintWork.html">Painting Works</a>
+              </div>
+              <h3>Fresh, Clean and Premium</h3>
+              <p>
+                Smooth finishes and color harmony that make every room feel
+                brighter, cleaner and more sophisticated.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-fitout">
+            <img
+              src="images/image6.jpeg"
+              alt="Fitout detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="fitoutJoineryWork.html">Fit-Out Works</a>
+              </div>
+              <h3>Premium Business Interiors</h3>
+              <p>
+                Functional and elegant fit-out spaces that look modern, feel
+                comfortable and support productivity.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-maintenance">
+            <img
+              src="images/fImage7.jpeg"
+              alt="Maintenance detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="buildingMaintenanceWork.html">Building Maintenance</a>
+              </div>
+              <h3>Protecting Property Value</h3>
+              <p>
+                Inspection, planning and maintenance so buildings remain safe,
+                functional and well-presented long term.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-tiling">
+            <img
+              src="images/Image7.jpeg"
+              alt="Tiling detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="buildingMaintenanceWork.html">Tiles Installation</a>
+              </div>
+              <h3>Sharp, Clean Finishes</h3>
+              <p>
+                Carefully aligned tile work that brings structure, texture and
+                luxury to floors and walls.
+              </p>
+            </div>
+          </div>
+          <div class="service-detail" id="service-carpentry">
+            <img
+              src="images/sr7.jpg"
+              alt="Carpentry detail"
+            />
+            <div>
+              <div class="service-badge">
+                <a href="fitoutJoineryWork.html">Joinery & Carpentry</a>
+              </div>
+              <h3>Tailored Woodwork</h3>
+              <p>
+                From cupboards to cabinets, our carpentry work balances
+                structure, finish and fit for premium interiors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-left">
+        <div class="section-title">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span> Our Projects
+          </div>
+          <h2>Project Gallery</h2>
+          <p>
+            Projects move continuously from right to left and pause when you
+            hover over them.
+          </p>
+        </div>
+
+        <div class="projects-wrap">
+          <div class="projects-track">
+            <article class="project-card">
+              <img
+                src="images/sr1.jpg"
+                alt="Villa Renovation"
+              />
+              <div class="project-info">
+                <h3>Villa Renovation</h3>
+                <p>
+                  Al Barsha, Dubai — premium renovation with elegant finishing.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="images/image1.png"
+                alt="Office Interior"
+              />
+              <div class="project-info">
+                <h3>Office Interior</h3>
+                <p>
+                  Business Bay, Dubai — modern workplace fit-out and
+                  maintenance.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="images/sr3.jpg"
+                alt="Building Maintenance"
+              />
+              <div class="project-info">
+                <h3>Building Maintenance</h3>
+                <p>
+                  Al Nahda, Dubai — routine upkeep with careful technical
+                  delivery.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="images/sr4.jpg"
+                alt="Renovation Project"
+              />
+              <div class="project-info">
+                <h3>Renovation Project</h3>
+                <p>
+                  Interior transformation with a clean, luxury-focused finish.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2070&auto=format&fit=crop"
+                alt="Painting Works"
+              />
+              <div class="project-info">
+                <h3>Painting Works</h3>
+                <p>Long-lasting, smooth and elegant color application.</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="images/image4.jpeg"
+                alt="Fit-Out Project"
+              />
+              <div class="project-info">
+                <h3>Fit-Out Project</h3>
+                <p>Modern commercial interior completion and styling.</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="images/image8.PNG"
+                alt="Villa Renovation Duplicate"
+              />
+              <div class="project-info">
+                <h3>Villa Renovation</h3>
+                <p>
+                  Al Barsha, Dubai — premium renovation with elegant finishing.
+                </p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop"
+                alt="Office Interior Duplicate"
+              />
+              <div class="project-info">
+                <h3>Office Interior</h3>
+                <p>
+                  Business Bay, Dubai — modern workplace fit-out and
+                  maintenance.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-top">
+        <div class="section-title">
+          <div class="eyebrow">
+            <span class="pulse-dot"></span> What Our Clients Say
+          </div>
+          <h2>Feedback Cards</h2>
+          <p>
+            Cards now have stronger contrast, soft motion and a premium dark
+            badge for visual balance.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial glass">
+            <div class="badge"><i class="fa-solid fa-quote-left"></i></div>
+            <div class="stars">★★★★★</div>
+            <p>
+              Outstanding renovation work with luxury finishing and professional
+              coordination from start to end.
+            </p>
+            <h4>Ahmed Khan</h4>
+          </div>
+          <div class="testimonial glass">
+            <div class="badge"><i class="fa-solid fa-star"></i></div>
+            <div class="stars">★★★★★</div>
+            <p>
+              Excellent maintenance and fit-out services. The team delivered on
+              time and kept the quality high.
+            </p>
+            <h4>Sarah Ali</h4>
+          </div>
+          <div class="testimonial glass">
+            <div class="badge"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="stars">★★★★★</div>
+            <p>
+              Very professional technical support, good communication and a
+              premium look in the final work.
+            </p>
+            <h4>Rizwan Sheikh</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="clients" class="section">
+      <div class="frame"></div>
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow"><span class="pulse-dot"></span> Our Clients</div>
+          <h2>Our Clients</h2>
+          <p>
+            Floating client cards with subtle motion and strong contrast for a
+            premium corporate feel.
+          </p>
+        </div>
+
+        <div class="client-grid">
+          <div class="client-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=600&auto=format&fit=crop"
+              alt="Client logo"
+            />
+            <h3>By OBS</h3>
+            <p>Commercial & maintenance client</p>
+          </div>
+          <div class="client-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600&auto=format&fit=crop"
+              alt="Client logo"
+            />
+            <h3>Al-Futtaim Group</h3>
+            <p>Project and fit-out client</p>
+          </div>
+          <div class="client-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop"
+              alt="Client logo"
+            />
+            <h3>Burj Al Arab Hotel</h3>
+            <p>Maintenance and service client</p>
+          </div>
+          <div class="client-card glass">
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop"
+              alt="Client logo"
+            />
+            <h3>MAF</h3>
+            <p>Interior and renovation client</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-right">
+        <div class="section-title">
+          <div class="eyebrow"><span class="pulse-dot"></span> Book Online</div>
+          <h2>Book a Consultation Anytime</h2>
+          <p>
+            Make your booking section feel like a real company service desk with
+            clear contact details and CTA buttons.
+          </p>
+        </div>
+
+        <div class="book-box section-card">
+          <div>
+            <h3
+              style="
+                font-family: &quot;Cormorant Garamond&quot;, serif;
+                font-size: clamp(2rem, 3.5vw, 3rem);
+                margin: 0 0 12px;
+              "
+            >
+              Plan Your Project With Confidence
+            </h3>
+            <p style="line-height: 1.9; color: rgba(4, 8, 15, 0.75)">
+              Book an appointment for renovation, maintenance, fit-out,
+              painting, plumbing or electrical work. Our team will contact you
+              with the best plan.
+            </p>
+            <div class="hero-actions" style="margin-top: 18px">
+              <a class="btn btn-primary" href="#contact"
+                ><i class="fa-solid fa-calendar-check"></i> Book Appointment</a
+              >
+              <a class="btn btn-secondary" href="#services"
+                ><i class="fa-solid fa-list"></i> View Services</a
+              >
+            </div>
+          </div>
+
+          <div class="book-panel glass">
+            <div class="contact-info">
+              <div>
+                <strong>Office</strong> Mai Tower Al Nahda-1, Dubai, UAE
+              </div>
+              <div><strong>Phone</strong> +971 521483314 / +971 526327914</div>
+              <div><strong>Email</strong> info@srtechnicals.com</div>
+              <div><strong>Website</strong> www.srtechnicals.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-animate">
+      <div class="frame"></div>
+      <div class="container reveal from-left">
+        <div class="section-title">
+          <div class="eyebrow"><span class="pulse-dot"></span> Contact Us</div>
+          <h2>Get In Touch Today</h2>
+          <p>
+            Use this final call-to-action block to invite calls, WhatsApp
+            messages, email and bookings.
+          </p>
+        </div>
+
+        <div class="book-box section-card">
+          <div>
+            <h3
+              style="
+                font-family: &quot;Cormorant Garamond&quot;, serif;
+                font-size: clamp(2rem, 3.5vw, 3rem);
+                margin: 0 0 12px;
+              "
+            >
+              We Are Ready For Your Next Project
+            </h3>
+            <p style="line-height: 1.9; color: rgba(4, 8, 15, 0.75)">
+              Contact SR Technical Services LLC for professional civil
+              maintenance, renovation and technical solutions in Dubai and
+              across UAE.
+            </p>
+            <div class="hero-actions" style="margin-top: 18px">
+              <a class="btn btn-primary" href="tel:+971521483314"
+                ><i class="fa-solid fa-phone"></i> Call Now</a
+              >
+              <a class="btn btn-secondary" href="mailto:info@srtechnicals.com"
+                ><i class="fa-solid fa-envelope"></i> Email Us</a
+              >
+            </div>
+          </div>
+
+          <div class="book-panel glass">
+            <div class="contact-info">
+              <div><strong>Phone</strong> +971 521483314</div>
+              <div><strong>Phone</strong> +971 526327914</div>
+              <div><strong>Email</strong> info@srtechnicals.com</div>
+              <div>
+                <strong>Address</strong> Office Mai Tower Al Nahda-1, Dubai
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer section-animate">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3>SR Technical Services LLC</h3>
+          <p>
+            Premium technical, maintenance and renovation company serving Dubai
+            and UAE with trusted quality and a polished finish.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <div class="footer-links">
+            <a href="renovationWork.html">Renovation</a>
+            <a href="electricalWork.html">Electrical</a>
+            <a href="paintWork.html">Painting</a>
+            <a href="plumbingWork.html">Plumbing</a>
+            <a href="fitoutJoineryWork.html">Fit-Out</a>
+            <a href="buildingMaintenanceWork.html">Building Maintenance</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <p style="margin-bottom: 8px">
+            <i class="fa-solid fa-phone"></i> +971 521483314
+          </p>
+          <p style="margin-bottom: 8px">
+            <i class="fa-solid fa-phone"></i> +971 526327914
+          </p>
+          <p style="margin-bottom: 8px">
+            <i class="fa-solid fa-envelope"></i> info@srtechnicals.com
+          </p>
+          <p style="margin-bottom: 8px">
+            <i class="fa-solid fa-location-dot"></i> Mai Tower Al Nahda-1, Dubai
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Syed Rizvi Technical Services LLC | Luxury Engineering &
+        Maintenance Solutions UAE
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

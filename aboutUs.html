@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | SR Technical Services LLC</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --bg: #0c1220;
+        --bg-soft: #111a2e;
+        --panel: rgba(255, 248, 238, 0.92);
+        --panel-2: rgba(255, 255, 255, 0.78);
+        --panel-dark: rgba(10, 15, 26, 0.82);
+        --text: #f6f1e8;
+        --text-dark: #0d1626;
+        --muted: rgba(246, 241, 232, 0.72);
+        --muted-dark: rgba(13, 22, 38, 0.72);
+        --line: rgba(122, 153, 205, 0.18);
+        --gold: #d9b46f;
+        --gold-2: #f0d5a0;
+        --blue: #4e78b5;
+        --blue-2: #88a9dd;
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+        --shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.12);
+        --radius: 30px;
+        --radius-lg: 40px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 110px;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .bg-fixed {
+        position: fixed;
+        inset: 0;
+        z-index: -4;
+        background:
+          linear-gradient(180deg, rgba(6, 10, 18, 0.56), rgba(6, 10, 18, 0.78)),
+          url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2200&auto=format&fit=crop")
+            center/cover no-repeat;
+        transform: scale(1.03);
+        filter: saturate(0.95) contrast(1.02);
+      }
+
+      .bg-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(217, 180, 111, 0.1),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 85% 20%,
+            rgba(78, 120, 181, 0.18),
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 15% 80%,
+            rgba(255, 255, 255, 0.05),
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at 75% 78%,
+            rgba(240, 213, 160, 0.08),
+            transparent 20%
+          );
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -2;
+        opacity: 0.1;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 36px 36px;
+        mix-blend-mode: screen;
+      }
+
+      .progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 0%;
+        z-index: 2000;
+        background: linear-gradient(90deg, var(--gold), var(--blue-2));
+        box-shadow: 0 0 18px rgba(217, 180, 111, 0.35);
+      }
+
+      .container {
+        width: min(1240px, 92%);
+        margin: 0 auto;
+      }
+
+      .nav {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(1260px, calc(100% - 24px));
+        z-index: 1200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 18px;
+        border-radius: 22px;
+        background: rgba(11, 17, 29, 0.68);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(18px) saturate(150%);
+        -webkit-backdrop-filter: blur(18px) saturate(150%);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+
+      .brand span {
+        color: var(--gold-2);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.92rem;
+        font-weight: 600;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: 0.25s ease;
+      }
+
+      .nav-links a:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .nav-cta {
+        background: linear-gradient(135deg, var(--gold), #efc98a) !important;
+        color: #151515 !important;
+        font-weight: 800 !important;
+      }
+
+      .menu-btn {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border: none;
+        border-radius: 14px;
+        color: #fff;
+        background: linear-gradient(135deg, var(--blue), var(--blue-2));
+        box-shadow: 0 10px 24px rgba(78, 120, 181, 0.25);
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 92px;
+        left: -332px;
+        width: 304px;
+        z-index: 1300;
+        border-radius: 0 24px 24px 0;
+        padding: 20px;
+        background: rgba(10, 15, 26, 0.94);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        transition: 0.32s ease;
+      }
+
+      .mobile-menu.active {
+        left: 0;
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 12px 14px;
+        margin-bottom: 8px;
+        border-radius: 14px;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .social-floating {
+        position: fixed;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1100;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .social-floating a {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        text-decoration: none;
+        background: rgba(10, 15, 26, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+        transition: 0.24s ease;
+      }
+
+      .social-floating a:hover {
+        transform: translateX(-5px) scale(1.04);
+        background: linear-gradient(135deg, var(--blue), var(--gold));
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 126px 0 86px;
+        position: relative;
+      }
+
+      .hero-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 26px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(217, 180, 111, 0.12);
+        color: var(--gold-2);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.8rem, 8vw, 7.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        margin: 0 0 16px;
+        max-width: 10ch;
+        text-wrap: balance;
+      }
+
+      .hero h1 .accent {
+        color: var(--gold-2);
+        font-style: italic;
+      }
+
+      .hero p {
+        max-width: 680px;
+        font-size: 1.02rem;
+        line-height: 1.9;
+        color: rgba(246, 241, 232, 0.8);
+        margin: 0;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.25s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-4px);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--gold), #f1d7a8);
+        color: #141414;
+        box-shadow: 0 18px 32px rgba(217, 180, 111, 0.18);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-side {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 16px;
+      }
+
+      .signature-card {
+        border-radius: 34px;
+        padding: 26px;
+        background: rgba(12, 18, 31, 0.62);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      .signature-card .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.76rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 18px;
+      }
+
+      .signature-card .big-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+        line-height: 1.05;
+        margin: 0 0 12px;
+        color: #fff;
+      }
+
+      .signature-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.74);
+        line-height: 1.8;
+      }
+
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 26px;
+      }
+
+      .stat-pill {
+        border-radius: 22px;
+        padding: 18px 16px;
+        background: rgba(255, 248, 238, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .stat-pill .num {
+        display: block;
+        font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .stat-pill .txt {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .section {
+        padding: 96px 0;
+        position: relative;
+      }
+
+      .section-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .panel {
+        border-radius: var(--radius-lg);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 248, 238, 0.94),
+          rgba(255, 248, 238, 0.82)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.48);
+        box-shadow: var(--shadow);
+        color: var(--text-dark);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .panel.dark {
+        background: linear-gradient(
+          180deg,
+          rgba(13, 19, 33, 0.88),
+          rgba(8, 12, 22, 0.92)
+        );
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .section-head {
+        max-width: 920px;
+        margin: 0 auto 28px;
+        text-align: center;
+      }
+
+      .section-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--blue);
+        background: rgba(78, 120, 181, 0.1);
+        border: 1px solid rgba(78, 120, 181, 0.12);
+        padding: 9px 14px;
+        border-radius: 999px;
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .section-head h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.3rem, 5vw, 4.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.03em;
+        margin: 0 0 14px;
+      }
+
+      .section-head p {
+        margin: 0 auto;
+        max-width: 760px;
+        color: var(--gold-2);
+        line-height: 1.9;
+        font-size: 1rem;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .story-card {
+        padding: 34px;
+        border-radius: 36px;
+      }
+
+      .story-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4.2vw, 4rem);
+        line-height: 1.02;
+        margin: 0 0 18px;
+        max-width: 10ch;
+      }
+
+      .story-copy {
+        color: var(--muted-dark);
+        line-height: 1.95;
+        font-size: 1rem;
+        margin-bottom: 18px;
+      }
+
+      .story-sign {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(13, 22, 38, 0.12);
+        margin-top: 18px;
+        color: var(--muted-dark);
+      }
+
+      .line-figure {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .info-block {
+        padding: 18px 18px 16px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(13, 22, 38, 0.08);
+      }
+
+      .info-block .mini {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .info-block strong {
+        display: block;
+        font-size: 1.05rem;
+        line-height: 1.55;
+        color: var(--text-dark);
+        font-weight: 600;
+      }
+
+      .cred-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .cred {
+        padding: 22px;
+        border-radius: 28px;
+        min-height: 170px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(13, 22, 38, 0.08);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .cred .tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--blue);
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+
+      .cred h3 {
+        font-size: 1.35rem;
+        margin: 0 0 10px;
+        line-height: 1.1;
+        color: var(--text-dark);
+      }
+
+      .cred p {
+        margin: 0;
+        color: var(--muted-dark);
+        line-height: 1.7;
+      }
+
+      .cred .bottom {
+        margin-top: 18px;
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .step {
+        border-radius: 28px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(13, 22, 38, 0.08);
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .step::after {
+        content: "";
+        position: absolute;
+        inset: auto -30px -30px auto;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(78, 120, 181, 0.14),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .step .num {
+        display: inline-grid;
+        place-items: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, var(--blue), #789bd0);
+        color: #fff;
+        font-weight: 900;
+        box-shadow: 0 12px 20px rgba(78, 120, 181, 0.18);
+      }
+
+      .step h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+        line-height: 1.15;
+        color: var(--text-dark);
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted-dark);
+        line-height: 1.8;
+      }
+
+      .service-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      .chip {
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(13, 22, 38, 0.08);
+        color: var(--text-dark);
+        font-weight: 700;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .work-card {
+        padding: 22px;
+        border-radius: 28px;
+        background: rgba(12, 18, 31, 0.65);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+        min-height: 170px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .work-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+
+      .work-card .k {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.62);
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+
+      .work-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.3rem;
+        line-height: 1.15;
+      }
+
+      .work-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        line-height: 1.75;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 18px;
+        align-items: stretch;
+        margin-top: 20px;
+      }
+
+      .contact-left,
+      .contact-right {
+        padding: 30px;
+        border-radius: 34px;
+      }
+
+      .contact-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        padding: 16px 16px 14px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(13, 22, 38, 0.08);
+      }
+
+      .contact-item .mini {
+        display: block;
+        color: var(--blue);
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .contact-item strong {
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .cta-box {
+        padding: 34px;
+        border-radius: 32px;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 15, 26, 0.95),
+          rgba(17, 24, 39, 0.96)
+        );
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .cta-box h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.8vw, 3.6rem);
+        line-height: 1;
+        margin: 0 0 10px;
+      }
+
+      .cta-box p {
+        margin: 0 0 24px;
+        color: rgba(255, 255, 255, 0.78);
+        line-height: 1.9;
+        max-width: 600px;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .footer {
+        padding: 26px 0 32px;
+        color: rgba(255, 255, 255, 0.62);
+      }
+
+      .footer-inner {
+        border-radius: 26px;
+        padding: 20px 22px;
+        background: rgba(10, 15, 26, 0.84);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer strong {
+        color: #fff;
+      }
+
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px) scale(0.985);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s cubic-bezier(0.17, 0.84, 0.44, 1);
+        will-change: transform, opacity;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: none;
+      }
+
+      .split-title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 10px;
+      }
+
+      .split-title .left {
+        max-width: 720px;
+      }
+
+      .side-note {
+        font-size: 0.82rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.54);
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .quote-band {
+        margin-top: 18px;
+        border-radius: 34px;
+        padding: 28px 28px 24px;
+        background: rgba(12, 18, 31, 0.78);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .quote-band p {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.9rem, 4vw, 3.6rem);
+        line-height: 1.05;
+        margin: 0 0 14px;
+        max-width: 11ch;
+      }
+
+      .quote-band .author {
+        color: rgba(255, 255, 255, 0.68);
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        font-size: 0.76rem;
+        font-weight: 800;
+      }
+
+      @media (max-width: 1120px) {
+        .hero-wrap,
+        .story-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 112px;
+        }
+
+        .stats-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cred-grid,
+        .timeline,
+        .work-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .split-title {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .nav-links {
+          display: none;
+        }
+        .menu-btn {
+          display: grid;
+          place-items: center;
+        }
+
+        .section {
+          padding: 78px 0;
+        }
+
+        .hero h1 {
+          max-width: 9ch;
+        }
+
+        .line-figure,
+        .contact-list {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-strip,
+        .cred-grid,
+        .timeline,
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions,
+        .cta-actions {
+          width: 100%;
+        }
+
+        .btn {
+          flex: 1 1 100%;
+        }
+
+        .social-floating {
+          right: 10px;
+        }
+
+        .social-floating a {
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .hero {
+          min-height: auto;
+          padding: 108px 0 52px;
+        }
+
+        .hero h1 {
+          font-size: clamp(3rem, 16vw, 4.4rem);
+        }
+
+        .section-head h2 {
+          font-size: clamp(2rem, 12vw, 3rem);
+        }
+
+        .story-card,
+        .contact-left,
+        .contact-right,
+        .cta-box {
+          padding: 22px;
+          border-radius: 28px;
+        }
+
+        .signature-card {
+          border-radius: 28px;
+        }
+
+        .nav {
+          top: 10px;
+          width: calc(100% - 16px);
+          padding: 12px 14px;
+        }
+
+        .brand {
+          font-size: 0.88rem;
+          letter-spacing: 0.06em;
+        }
+
+        .hero p,
+        .section-head p,
+        .story-copy,
+        .step p,
+        .work-card p {
+          font-size: 0.96rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-fixed"></div>
+    <div class="bg-overlay"></div>
+    <div class="noise"></div>
+    <div class="progress" id="progress"></div>
+
+    <nav class="nav">
+      <a class="brand" href="#home">SR <span>TECHNICAL</span></a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <aside class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="#story">Our Story</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#services">What We Do</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </aside>
+
+    <div class="social-floating" aria-label="Social links">
+      <a href="#" aria-label="Instagram"
+        ><i class="fa-brands fa-instagram"></i
+      ></a>
+      <a href="#" aria-label="WhatsApp"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+      <a href="tel:+971521483314" aria-label="Call"
+        ><i class="fa-solid fa-phone"></i
+      ></a>
+    </div>
+
+    <main id="home" class="hero">
+      <div class="container">
+        <div class="hero-wrap">
+          <section class="reveal">
+            <div class="eyebrow">
+              <span class="pulse-dot"></span> Here To Serve You
+            </div>
+            <h1>Building trust, one project at a time.</h1>
+            <p>
+              Syed Rizvi Technical Services LLC is shaped around practical
+              delivery, strong workmanship, and a calm professional approach
+              across civil maintenance, MEP, joinery, fit-out, renovation,
+              painting, plumbing, and electrical works.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary"
+                ><i class="fa-solid fa-circle-check"></i> Get Company Profile</a
+              >
+              <a href="#services" class="btn btn-secondary"
+                ><i class="fa-solid fa-compass"></i> Explore Scope</a
+              >
+            </div>
+
+            <div class="stats-strip">
+              <div class="stat-pill reveal">
+                <span class="num count" data-count="16" data-plus="true"
+                  >0</span
+                >
+                <div class="txt">Years of experience behind the story</div>
+              </div>
+              <div class="stat-pill reveal">
+                <span class="num count" data-count="2014" data-plus="false"
+                  >0</span
+                >
+                <div class="txt">Trading since, as stated in the profile</div>
+              </div>
+              <div class="stat-pill reveal">
+                <span class="num count" data-count="4" data-plus="true">0</span>
+                <div class="txt">Core service clusters highlighted</div>
+              </div>
+              <div class="stat-pill reveal">
+                <span class="num count" data-count="24" data-plus="false"
+                  >0</span
+                >
+                <div class="txt">Support-ready service mindset</div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="hero-side reveal">
+            <div class="signature-card">
+              <div class="label">
+                <i class="fa-solid fa-location-dot"></i> Dubai • United Arab
+                Emirates
+              </div>
+              <h2 class="big-quote">
+                A company profile built for real commercial conversations.
+              </h2>
+              <p>
+                The tone is confident, structured, and easy to scan — the way a
+                procurement manager, consultant, or client lead expects a
+                technical services company to present itself.
+              </p>
+            </div>
+
+            <div class="signature-card">
+              <div class="label">
+                <i class="fa-solid fa-award"></i> One-line Positioning
+              </div>
+              <p>
+                Civil maintenance, joinery, and MEP services delivered with
+                planning, quality, and timely completion.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <section id="story" class="section">
+      <div class="container section-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">OUR STORY</div>
+          <h2>Built from experience. Shaped by delivery.</h2>
+          <p>
+            The profile says the company grew from a simple idea: engineering is
+            not only construction, it is value, delight, and dependable delivery
+            for customers.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="panel story-card reveal">
+            <div class="split-title">
+              <div class="left">
+                <div class="section-kicker" style="margin-bottom: 14px">
+                  Here to Serve You
+                </div>
+                <div class="story-quote">
+                  Service that feels steady, capable, and clear.
+                </div>
+              </div>
+              <div class="side-note">A customer-first narrative</div>
+            </div>
+
+            <p class="story-copy">
+              Director Syed Raziq Raza Rizvi, after 16 years of experience,
+              built the company around the idea that technical work should
+              create value, not just output. The result is a maintenance company
+              that keeps the public-facing message focused, practical, and
+              trustworthy.
+            </p>
+
+            <div class="quote-band">
+              <p>
+                “It is about delivering value to customers and delight them.”
+              </p>
+              <div class="author">Director’s guiding idea</div>
+            </div>
+          </article>
+
+          <article class="panel story-card reveal">
+            <div class="section-kicker">Our Features</div>
+            <h2
+              style="
+                font-family: &quot;Cormorant Garamond&quot;, serif;
+                font-size: clamp(2rem, 4vw, 3.2rem);
+                line-height: 1;
+                margin: 0 0 14px;
+              "
+            >
+              On-time delivery, quality, and in-budget execution.
+            </h2>
+            <p class="story-copy">
+              The company profile repeatedly centers around discipline:
+              planning, design, quality, timely completion, and work done with
+              due diligence. That language becomes the visual rhythm of this
+              section.
+            </p>
+
+            <div class="line-figure">
+              <div class="info-block">
+                <span class="mini">What the profile says</span>
+                <strong
+                  >Experienced professionals placed in respective
+                  departments.</strong
+                >
+              </div>
+              <div class="info-block">
+                <span class="mini">What clients feel</span>
+                <strong
+                  >Clear coordination, fewer surprises, and better delivery
+                  control.</strong
+                >
+              </div>
+            </div>
+
+            <div class="story-sign">
+              <i class="fa-solid fa-pen-nib"></i>
+              <div>
+                <strong style="display: block; color: var(--text-dark)"
+                  >A simple promise</strong
+                >
+                <span
+                  >Quality work that is easy to trust and easy to brief.</span
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials" class="section">
+      <div class="container section-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">Credentials</div>
+          <h2>Made for procurement, approvals, and serious work.</h2>
+          <p>
+            Strict credentialing to guarantee compliance, budget control, and
+            security.
+          </p>
+        </div>
+
+        <div class="cred-grid">
+          <article class="cred reveal">
+            <div>
+              <div class="tag">Legal Entity</div>
+              <h3>Syed Rizvi Technical Services LLC</h3>
+              <p>
+                Registered in Dubai, with a profile built around maintenance and
+                building services.
+              </p>
+            </div>
+            <div class="bottom">Dubai, UAE</div>
+          </article>
+
+          <article class="cred reveal">
+            <div>
+              <div class="tag">License</div>
+              <h3>Dubai 1259980</h3>
+              <p>
+                Displayed in the company profile for formal reference and
+                commercial conversation.
+              </p>
+            </div>
+            <div class="bottom">License Number</div>
+          </article>
+
+          <article class="cred reveal">
+            <div>
+              <div class="tag">Trading Since</div>
+              <h3>2014</h3>
+              <p>
+                The profile highlights long-term trading experience and steady
+                delivery over time.
+              </p>
+            </div>
+            <div class="bottom">Commercial continuity</div>
+          </article>
+
+          <article class="cred reveal">
+            <div>
+              <div class="tag">Service Area</div>
+              <h3>Dubai, United Arab Emirates</h3>
+              <p>
+                The office address is shown as Mai Tower, Al Nahda-1, Dubai in
+                the profile.
+              </p>
+            </div>
+            <div class="bottom">Mai Tower, Al Nahda-1</div>
+          </article>
+
+          <article class="cred reveal">
+            <div>
+              <div class="tag">Working Hours</div>
+              <h3>Sunday to Thursday • 08:00 — 18:00 GST</h3>
+              <p>
+                Presented as an easy-to-scan operational detail for callers and
+                procurement teams.
+              </p>
+            </div>
+            <div class="bottom">Business hours</div>
+          </article>
+
+          <article class="cred reveal">
+            <div>
+              <div class="tag">Contact Stack</div>
+              <h3>Phone, Email, Website</h3>
+              <p>
+                +971 521483314, info@srtechnicals.com, and www.srtechnicals.com
+                are listed in the profile.
+              </p>
+            </div>
+            <div class="bottom">Direct routing</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container section-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">What We Do</div>
+          <h2>Four service clusters, one coordinated programme.</h2>
+          <p>
+            The profile focuses on civil maintenance, joinery, MEP, fit-out,
+            renovation, painting, plumbing, electrical work, and maintenance
+            across buildings, offices, apartments, villas, malls, and more.
+          </p>
+        </div>
+
+        <div class="service-cloud reveal" aria-label="Service list">
+          <div class="chip">Civil Maintenance</div>
+          <div class="chip">Joinery & Carpentry</div>
+          <div class="chip">MEP Works</div>
+          <div class="chip">Interior & Fit-Out</div>
+          <div class="chip">Renovation</div>
+          <div class="chip">Plumbing</div>
+          <div class="chip">Electrical</div>
+          <div class="chip">Painting</div>
+          <div class="chip">Building Maintenance</div>
+          <div class="chip">Utility Installation</div>
+          <div class="chip">Tiles Work</div>
+          <div class="chip">General Maintenance</div>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <span class="k">Scope Coverage</span>
+            <h3>Civil • Interior • MEP • Exterior</h3>
+            <p>
+              Four structured service clusters run under one coordinated
+              programme rather than a loose directory.
+            </p>
+          </article>
+
+          <article class="work-card reveal">
+            <span class="k">Client Environments</span>
+            <h3>Commercial-first, residential-capable</h3>
+            <p>
+              Offices, retail, managed assets, apartments, villas, and premium
+              living environments are all reflected in the work history.
+            </p>
+          </article>
+
+          <article class="work-card reveal">
+            <span class="k">Documentation</span>
+            <h3>Scope paper • handover • snag</h3>
+            <p>
+              Built to feel like a document that a property manager can keep on
+              file and act on quickly.
+            </p>
+          </article>
+        </div>
+
+        <div class="work-grid" style="margin-top: 16px">
+          <article class="work-card reveal">
+            <span class="k">Procurement Fit</span>
+            <h3>Profile, license & insurance</h3>
+            <p>
+              Presented in a clean, corporate way so the company feels ready for
+              real approvals.
+            </p>
+          </article>
+
+          <article class="work-card reveal">
+            <span class="k">Proof Posture</span>
+            <h3>Conservative, not loud</h3>
+            <p>
+              The communication stays focused on credentials, quality, and
+              reliable delivery.
+            </p>
+          </article>
+
+          <article class="work-card reveal">
+            <span class="k">Contact Stack</span>
+            <h3>Two phones • two emails • WhatsApp</h3>
+            <p>
+              Direct routing without sending people through unnecessary layers.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container section-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">How We Work</div>
+          <h2>Planning first, then delivery.</h2>
+          <p>
+            The profile emphasizes planning, design, quality, due diligence, and
+            timely completion.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="step reveal">
+            <div class="num">01</div>
+            <h3>Listen</h3>
+            <p>
+              Understand the space, the issue, the brief, and what the client
+              needs the result to achieve.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">02</div>
+            <h3>Plan</h3>
+            <p>
+              Map the work into a practical sequence so scope, budget, and
+              delivery stay controlled.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">03</div>
+            <h3>Deliver</h3>
+            <p>
+              Use the right team for the right job so the work is handled with
+              due diligence.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">04</div>
+            <h3>Close</h3>
+            <p>
+              Finish cleanly, hand over clearly, and leave a straightforward
+              record of what was done.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-inner">
+        <div class="section-head reveal">
+          <div class="section-kicker">Work Footprint</div>
+          <h2>Built for different kinds of spaces.</h2>
+          <p>
+            The service history in the profile references apartments, offices,
+            villas, malls, spas, buildings, and commercial properties
+          </p>
+        </div>
+
+        <div class="panel dark reveal" style="padding: 28px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 16px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 22px;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+              "
+            >
+              <div
+                class="section-kicker"
+                style="
+                  margin-bottom: 12px;
+                  background: rgba(255, 255, 255, 0.06);
+                  color: #fff;
+                  border-color: rgba(255, 255, 255, 0.08);
+                "
+              >
+                Residential
+              </div>
+              <p
+                style="
+                  margin: 0;
+                  color: rgba(255, 255, 255, 0.78);
+                  line-height: 1.8;
+                "
+              >
+                Apartments, villas, and residential areas with painting,
+                maintenance, plumbing, electrical, and interior support.
+              </p>
+            </div>
+            <div
+              style="
+                padding: 18px;
+                border-radius: 22px;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+              "
+            >
+              <div
+                class="section-kicker"
+                style="
+                  margin-bottom: 12px;
+                  background: rgba(255, 255, 255, 0.06);
+                  color: #fff;
+                  border-color: rgba(255, 255, 255, 0.08);
+                "
+              >
+                Commercial
+              </div>
+              <p
+                style="
+                  margin: 0;
+                  color: rgba(255, 255, 255, 0.78);
+                  line-height: 1.8;
+                "
+              >
+                Offices, malls, retail, managed sites, and commercial fit-out or
+                renovation environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-grid" style="margin-top: 16px">
+            <article class="work-card">
+              <span class="k">Examples in the profile</span>
+              <h3>Mai Tower • Al Nahda-2 • Business Bay • JLT</h3>
+              <p>
+                Sites listed across maintenance, painting, renovation,
+                carpentry, and tiles work.
+              </p>
+            </article>
+            <article class="work-card">
+              <span class="k">Capability tone</span>
+              <h3>Quiet confidence</h3>
+              <p>
+                Clear, mature, and built for clients who care about outcomes
+                more than decoration.
+              </p>
+            </article>
+            <article class="work-card">
+              <span class="k">Result</span>
+              <h3>Reliable handover</h3>
+              <p>
+                Not loud, not flashy — just a clean and trustworthy presence for
+                the brand.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container section-inner">
+        <div class="contact-grid">
+          <div class="panel contact-left reveal">
+            <div class="section-kicker">Contact</div>
+            <h2
+              style="
+                font-family: &quot;Cormorant Garamond&quot;, serif;
+                font-size: clamp(2.4rem, 5vw, 4rem);
+                line-height: 0.95;
+                margin: 0 0 12px;
+              "
+            >
+              Ready when the work needs a reliable team.
+            </h2>
+            <p
+              style="
+                margin: 0;
+                color: var(--muted-dark);
+                line-height: 1.9;
+                max-width: 640px;
+              "
+            >
+              Office Mai Tower, Al Nahda-1, Dubai. The profile lists direct
+              phone numbers, email addresses, and the website for quick routing.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="mini">Phone</span>
+                <strong>+971 521483314</strong>
+              </div>
+              <div class="contact-item">
+                <span class="mini">Phone</span>
+                <strong>+971 526327914</strong>
+              </div>
+              <div class="contact-item">
+                <span class="mini">Email</span>
+                <strong>info@srtechnicals.com</strong>
+              </div>
+              <div class="contact-item">
+                <span class="mini">Website</span>
+                <strong>x</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel dark contact-right reveal">
+            <div
+              class="section-kicker"
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                color: #fff;
+                border-color: rgba(255, 255, 255, 0.08);
+              "
+            >
+              Company Profile
+            </div>
+            <h2
+              style="
+                font-family: &quot;Cormorant Garamond&quot;, serif;
+                font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+                line-height: 0.98;
+                margin: 0 0 12px;
+              "
+            >
+              Commercial technical services in Dubai, executed with discipline.
+            </h2>
+            <p
+              style="
+                margin: 0 0 20px;
+                color: rgba(255, 255, 255, 0.76);
+                line-height: 1.85;
+              "
+            >
+              about-us destination .
+            </p>
+
+            <div class="cta-box">
+              <h3>SR Technical Services LLC</h3>
+              <p>
+                Civil maintenance, joinery, MEP, renovation, fit-out, plumbing,
+                electrical, painting, and building maintenance — presented with
+                confidence and calm structure.
+              </p>
+              <div class="cta-actions">
+                <a class="btn btn-primary" href="tel:+971521483314"
+                  ><i class="fa-solid fa-phone"></i> Call Now</a
+                >
+                <a class="btn btn-secondary" href="mailto:info@srtechnicals.com"
+                  ><i class="fa-solid fa-envelope"></i> Email Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner reveal">
+          <div>
+            <strong>SR Technical Services LLC</strong> • Dubai • Mai Tower, Al
+            Nahda-1
+          </div>
+          <div>
+            <a href="index.html">Top</a> • <a href="#services">Services</a> •
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuBtn = document.getElementById("menuBtn");
+      const progress = document.getElementById("progress");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.remove("active"),
+        );
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          mobileMenu.classList.remove("active");
+        }
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.14,
+          rootMargin: "0px 0px -90px 0px",
+        },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealObserver.observe(el));
+
+      function animateCount(el) {
+        const target = Number(el.dataset.count || 0);
+        const plus = el.dataset.plus === "true";
+        const duration = 1200;
+        const start = performance.now();
+        const from = 0;
+
+        function step(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          const value = Math.floor(from + (target - from) * eased);
+          el.textContent = value.toLocaleString() + (plus ? "+" : "");
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !entry.target.dataset.done) {
+              entry.target.dataset.done = "1";
+              animateCount(entry.target);
+            }
+          });
+        },
+        { threshold: 0.6 },
+      );
+
+      document
+        .querySelectorAll(".count")
+        .forEach((el) => countObserver.observe(el));
+
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (scrollTop / height) * 100;
+        progress.style.width = scrolled + "%";
+      });
+
+      const hero = document.querySelector(".hero");
+      const bg = document.querySelector(".bg-fixed");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          const y = window.scrollY * 0.12;
+          if (bg) bg.style.transform = `scale(1.03) translateY(${y}px)`;
+          if (hero)
+            hero.style.transform = `translateY(${window.scrollY * 0.02}px)`;
+        },
+        { passive: true },
+      );
+    </script>
+  </body>
+</html>
